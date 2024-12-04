@@ -183,7 +183,7 @@ mjx-container[display="true"] + br {
 <li>hash索引（默认）</li>
 </ul>
 <p>文件：<code>xxx.sdi</code> 存储表结构信息</p>
-<p><img src="/Users/wsy/Library/Application%20Support/typora-user-images/image-20241128110053093.png" alt="image-20241128110053093" style="zoom:50%;"></p>
+<p><img src="https://p.ipic.vip/8irxon.png" alt="image-20241128110053093" style="zoom:50%;"></p>
 <h3 id="存储引擎选择">存储引擎选择</h3>
 <p><code>InnoDB</code>：对事务的完整性有比较高的要求，在并发条件下要求数据的一致性。数据操作有插入查询还有更新删除</p>
 <p><code>MyISAM</code>：数据操作主要是插入查询，很少更新删除，对事务完整性、并发性要求不高</p>
@@ -193,7 +193,7 @@ mjx-container[display="true"] + br {
 <p>优点：提高数据检索的效率，降低数据库的IO成本；通过索引列对数据进行排序，降低数据排序的成本，降低CPU的消耗</p>
 <p>缺点：索引列也要占用空间；降低更新表的速度</p>
 <h3 id="索引结构">索引结构</h3>
-<p><img src="/Users/wsy/Library/Application%20Support/typora-user-images/image-20241128112807503.png" alt="image-20241128112807503" style="zoom:50%;"></p>
+<p><img src="https://p.ipic.vip/yjws0n.png" alt="image-20241128112807503" style="zoom:50%;"></p>
 <p>一般是B+树索引</p>
 <h3 id="b-tree">B-Tree</h3>
 <p>多路平衡查找树</p>
@@ -207,7 +207,7 @@ mjx-container[display="true"] + br {
 <p>求 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="4.864ex" height="1.595ex" role="img" focusable="false" viewBox="0 -694 2150 705"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="210E" d="M137 683Q138 683 209 688T282 694Q294 694 294 685Q294 674 258 534Q220 386 220 383Q220 381 227 388Q288 442 357 442Q411 442 444 415T478 336Q478 285 440 178T402 50Q403 36 407 31T422 26Q450 26 474 56T513 138Q516 149 519 151T535 153Q555 153 555 145Q555 144 551 130Q535 71 500 33Q466 -10 419 -10H414Q367 -10 346 17T325 74Q325 90 361 192T398 345Q398 404 354 404H349Q266 404 205 306L198 293L164 158Q132 28 127 16Q114 -11 83 -11Q69 -11 59 -2T48 16Q48 30 121 320L195 616Q195 629 188 632T149 637H128Q122 643 122 645T124 664Q129 683 137 683Z"></path></g><g data-mml-node="mi" transform="translate(576,0)"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path></g><g data-mml-node="mi" transform="translate(1105,0)"><path data-c="1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path></g><g data-mml-node="mi" transform="translate(1574,0)"><path data-c="210E" d="M137 683Q138 683 209 688T282 694Q294 694 294 685Q294 674 258 534Q220 386 220 383Q220 381 227 388Q288 442 357 442Q411 442 444 415T478 336Q478 285 440 178T402 50Q403 36 407 31T422 26Q450 26 474 56T513 138Q516 149 519 151T535 153Q555 153 555 145Q555 144 551 130Q535 71 500 33Q466 -10 419 -10H414Q367 -10 346 17T325 74Q325 90 361 192T398 345Q398 404 354 404H349Q266 404 205 306L198 293L164 158Q132 28 127 16Q114 -11 83 -11Q69 -11 59 -2T48 16Q48 30 121 320L195 616Q195 629 188 632T149 637H128Q122 643 122 645T124 664Q129 683 137 683Z"></path></g></g></g></svg></mjx-container></span> 函数值，按值插入槽位</p>
 <p>不支持范围查询</p>
 <h3 id="索引分类">索引分类</h3>
-<p><img src="/Users/wsy/Library/Application%20Support/typora-user-images/image-20241128115628405.png" alt="image-20241128115628405" style="zoom:50%;"></p>
+<p><img src="https://p.ipic.vip/9npt7k.png" alt="image-20241128115628405" style="zoom:50%;"></p>
 <p>在 <code>InnoDB</code> 中，根据索引的存储形式，又分为以下两种：</p>
 <ul>
 <li>聚集索引(Clustered Index)：将数据存储与索引放到了一块，索引结构的叶子结点保存了行数据，必须有而且只能有一个</li>
