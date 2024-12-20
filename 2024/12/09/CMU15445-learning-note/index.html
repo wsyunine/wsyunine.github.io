@@ -2,7 +2,14 @@
 
 Projects #0 - C++ Primer
 C++ Bootcamp
-主要针对C++11特性"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+主要针对C++11特性，共  个文件。
+
+references.cpp
+有关引用（别名），函数传引用
+move_semantics.cpp
+有关移动语义和右值引用
+
+lvalue（左值）：refe"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -118,5 +125,46 @@ mjx-container[display="true"] + br {
 <span id="more"></span>
 <h2 id="projects-0---c-primer">Projects #0 - C++ Primer</h2>
 <h3 id="c-bootcamp">C++ Bootcamp</h3>
-<p>主要针对C++11特性</p>
-</p><div class="tip">本文采用CC-BY-SA-3.0协议，转载请注明出处<br>作者: wsy_jim</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-12-09</span><i class="fa fa-tag"></i><a class="tag" href="/tags/CMU/" title="CMU">CMU </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Databases/" title="Databases">Databases </a><span class="leancloud_visitors"></span><span>大约17个字, 3秒读完</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,https://wsyunine.github.io/2024/12/09/CMU15445-learning-note/,M-071的甲板,CMU15445_learning_note,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2024/12/04/Mysql-learning-2/" title="MySQL 学习笔记进阶篇">下一篇</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"页面",CATEGORIES:"分类",TAGS:"标签",UNTITLED:"(无标题)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
+<p>主要针对C++11特性，共 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.557ex" role="img" focusable="false" viewBox="0 -666 1000 688"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z" transform="translate(500,0)"></path></g></g></g></svg></mjx-container></span> 个文件。</p>
+<ol type="1">
+<li><p>references.cpp</p>
+<p>有关引用（别名），函数传引用</p></li>
+<li><p>move_semantics.cpp</p>
+<p>有关移动语义和右值引用</p>
+<ul>
+<li><p>lvalue（左值）：refer to 内存中某个有权限访问的区域的对象</p>
+<p>rvalue（右值）：非左值的值，数据位于的区域没有权限访问（字面常量）或者没有必要访问（匿名对象），包括<strong>将亡值</strong>和<strong>纯右值</strong></p>
+<p>赋值语句中等号左边的必须是左值，右边的随便</p></li>
+<li><p>左值引用（&amp;）和右值引用（&amp;&amp;）都必须立即初始化，右值引用可以<strong>通过移动的方式在浅拷贝的情况下保证拷贝的安全性</strong>，在设计和实现类时，对于需要动态申请大量资源的类，应该设计右值引用的拷贝构造函数和赋值函数，以提高应用程序的效率，具体 3. 中有讲</p></li>
+<li><p>std::move() 方法可以将左值转换为右值，即将亡值，方便使用移动语义，需要 <code>&lt;utility&gt;</code> 头文件</p></li>
+</ul></li>
+<li><p>move_constructors.cpp</p>
+<p>有关应用移动语义的拷贝构造函数和赋值重载函数</p>
+<p>在类定义中删除左值引用的拷贝构造函数和赋值重载函数，意味着实例化后就不再允许被复制，防止双重删除或者内存泄露</p>
+<p>References：</p>
+<ul>
+<li>https://zhuanlan.zhihu.com/p/677643121</li>
+<li>https://zhuanlan.zhihu.com/p/620583555</li>
+</ul></li>
+<li><p>templated_functions.cpp</p>
+<p>有关模板函数</p>
+<p>注意模板参数不一定要是 <code>class</code> 或者 <code>typename</code>，也可以是别的，但没必要</p></li>
+<li><p>templated_classes.cpp</p>
+<p>有关模板类</p></li>
+<li><p>wrapper_class.cpp</p>
+<p>有关包装类</p>
+<ul>
+<li>RAII（Resource Acquisition is Initialization）：一个实例化管理一个资源，防止双重删除或内存泄露</li>
+<li>使用移动语义</li>
+</ul></li>
+<li><p>iterator.cpp</p>
+<p>有关迭代器，实现了一个双向链表（DLL）及其迭代器</p></li>
+<li><p>namespaces.cpp</p>
+<p>有关命名空间</p></li>
+<li><p>vectors.cpp</p>
+<p>有关动态数组</p>
+<p><code>std::remove_if()</code> 不能删除元素，只能将元素移到末尾，配合 <code>erase()</code> 函数才能删掉</p>
+<p><code>emplace_back()</code> 比 <code>push_back()</code> 稍快</p></li>
+<li><p>sets.cpp</p></li>
+</ol>
+</p><div class="tip">本文采用CC-BY-SA-3.0协议，转载请注明出处<br>作者: wsy_jim</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-12-09</span><i class="fa fa-tag"></i><a class="tag" href="/tags/CMU/" title="CMU">CMU </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Databases/" title="Databases">Databases </a><span class="leancloud_visitors"></span><span>大约565个字, 1分钟53秒读完</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,https://wsyunine.github.io/2024/12/09/CMU15445-learning-note/,M-071的甲板,CMU15445_learning_note,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2024/12/04/Mysql-learning-2/" title="MySQL 学习笔记进阶篇">下一篇</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"页面",CATEGORIES:"分类",TAGS:"标签",UNTITLED:"(无标题)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
