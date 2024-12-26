@@ -125,7 +125,7 @@ mjx-container[display="true"] + br {
 <span id="more"></span>
 <h2 id="projects-0---c-primer">Projects #0 - C++ Primer</h2>
 <h3 id="c-bootcamp">C++ Bootcamp</h3>
-<p>主要针对 C++17 特性，共 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.557ex" role="img" focusable="false" viewBox="0 -666 1000 688"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z" transform="translate(500,0)"></path></g></g></g></svg></mjx-container></span> 个文件。</p>
+<p>主要针对 C++17 特性，共 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.557ex" role="img" focusable="false" viewBox="0 -666 1000 688"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="39" d="M352 287Q304 211 232 211Q154 211 104 270T44 396Q42 412 42 436V444Q42 537 111 606Q171 666 243 666Q245 666 249 666T257 665H261Q273 665 286 663T323 651T370 619T413 560Q456 472 456 334Q456 194 396 97Q361 41 312 10T208 -22Q147 -22 108 7T68 93T121 149Q143 149 158 135T173 96Q173 78 164 65T148 49T135 44L131 43Q131 41 138 37T164 27T206 22H212Q272 22 313 86Q352 142 352 280V287ZM244 248Q292 248 321 297T351 430Q351 508 343 542Q341 552 337 562T323 588T293 615T246 625Q208 625 181 598Q160 576 154 546T147 441Q147 358 152 329T172 282Q197 248 244 248Z" transform="translate(500,0)"></path></g></g></g></svg></mjx-container></span> 个文件。</p>
 <ol type="1">
 <li><p>references.cpp</p>
 <p>有关引用（别名），函数传引用</p></li>
@@ -186,7 +186,7 @@ mjx-container[display="true"] + br {
 <p>有关互斥锁</p>
 <ul>
 <li>同步原语（Synchronization Primitives）是用于支持此多线程环境下线程同步的工具和机制。这些源于主要用于管理线程之间对共享资源的访问，防止数据竞争和保证线程安全</li>
-<li><code>std::mutex</code> 提供互斥锁，确保同一时间只有一个线程可以获得互斥量，不可复制，不可移动</li>
+<li><code>std::mutex</code> 提供独占锁，确保同一时间只有一个线程可以获得互斥量，不可复制，不可移动</li>
 <li>互斥量状态：
 <ul>
 <li>解锁状态意味着共享资源可用</li>
@@ -205,7 +205,7 @@ mjx-container[display="true"] + br {
 <ul>
 <li><p>需要 <code>&lt;mutex&gt;</code> 和 <code>&lt;thread&gt;</code> 头文件</p></li>
 <li><p>当创建一个 <code>std::scoped_lock</code> 对象时，它尝试取得其所给互斥量的所有权。当控制权离开创建 <code>scoped_lock</code> 对象的作用域时，<code>scoped_lock</code> 会被析构，互斥量随之被释放。如果给定了多个互斥量，将使用避免死锁的算法，类似于 <code>std::lock</code></p></li>
-<li><p>是一个 RAII 类</p></li>
+<li><p>是一个 RAII 风格的类</p></li>
 <li><p><code>scoped_lock</code> 类不可复制，不可移动</p></li>
 </ul>
 <p>References：</p>
@@ -216,6 +216,39 @@ mjx-container[display="true"] + br {
 <p>有关条件变量</p>
 <ul>
 <li>需要 <code>&lt;condition_variable&gt;</code> 头文件</li>
+<li>功能：
+<ul>
+<li>拥有条件变量的线程获取互斥量</li>
+<li>循环检查某个条件，如果条件不满足则阻塞直到满足；如果满足则向下执行</li>
+<li>某个线程满足条件执行完之后调用 <code>notify_one</code> 或 <code>notify_all</code> 唤醒一个或所有等待线程</li>
+</ul></li>
+<li><code>wait()</code> 第一个参数必须用 <code>unique_lock</code></li>
+<li><code>unique_lock</code> 不能复制，可以移动</li>
+</ul>
+<p>References：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/599172163">C++11条件变量condition_variable详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013043408/article/details/138437356">【C++】独占互斥锁（unique_lock）</a></li>
+</ul></li>
+<li><p>rwlock.cpp</p>
+<p>有关读写器锁的用法</p>
+<ul>
+<li>用 <code>std::shared_mutex</code>、<code>std::shared_lock</code> 和 <code>std::unique_lock</code></li>
+<li>需要 <code>&lt;shared_mutex&gt;</code></li>
+<li><code>std::mutex</code> 和 <code>std::shared_mutex</code> 的区别：
+<ul>
+<li><code>std::mutex</code> 提供独占访问，同一时间只能有一个线程持有该类型的锁</li>
+<li><code>std::shared_mutex</code> 提供共享访问和独占访问，允许多个线程通过持有 <code>std::shared_lock</code> 共享锁来只读访问，允许一个线程持有 <code>std::unique_lock</code> 独占锁来进行写操作，但是共享锁和独占锁不能同时存在，互斥</li>
+<li><code>std::shared_mutex</code> 更适用于读多写少的场景</li>
+</ul></li>
+</ul></li>
+<li><p>s24_my_ptr.cpp</p>
+<p>实现了一个 <code>std::unique_pointer&lt;T&gt;</code> 类</p>
+<ul>
+<li>使用原始指针类型，很可能会出现内存泄露，二次释放，释放后访问的问题</li>
+<li>RAII 的好处</li>
+<li><code>smart_generator&lt;int&gt;()</code> 和 <code>dumb_generator&lt;int&gt;()</code> 的区别</li>
 </ul></li>
 </ol>
-</p><div class="tip">本文采用CC-BY-SA-3.0协议，转载请注明出处<br>作者: wsy_jim</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-12-09</span><i class="fa fa-tag"></i><a class="tag" href="/tags/CMU/" title="CMU">CMU </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Databases/" title="Databases">Databases </a><span class="leancloud_visitors"></span><span>大约1206个字, 4分钟1秒读完</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,https://wsyunine.github.io/2024/12/09/CMU15445-learning-note/,M-071的甲板,CMU15445_learning_note,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2024/12/04/Mysql-learning-2/" title="MySQL 学习笔记进阶篇">下一篇</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"页面",CATEGORIES:"分类",TAGS:"标签",UNTITLED:"(无标题)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
+<h3 id="hyperloglog-算法">HyperLogLog 算法</h3>
+</p><div class="tip">本文采用CC-BY-SA-3.0协议，转载请注明出处<br>作者: wsy_jim</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-12-09</span><i class="fa fa-tag"></i><a class="tag" href="/tags/CMU/" title="CMU">CMU </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Databases/" title="Databases">Databases </a><span class="leancloud_visitors"></span><span>大约1561个字, 5分钟12秒读完</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,https://wsyunine.github.io/2024/12/09/CMU15445-learning-note/,M-071的甲板,CMU15445_learning_note,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2024/12/04/Mysql-learning-2/" title="MySQL 学习笔记进阶篇">下一篇</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"页面",CATEGORIES:"分类",TAGS:"标签",UNTITLED:"(无标题)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
