@@ -282,7 +282,7 @@ mjx-container[display="true"] + br {
 <hr>
 <h2 id="lecture-01---relational-model-algebra">Lecture #01 - Relational Model &amp; Algebra</h2>
 <p><a target="_blank" rel="noopener" href="https://15445.courses.cs.cmu.edu/fall2024/notes/01-relationalmodel.pdf">Notes</a></p>
-<p>一些概念，一些关系源语</p>
+<p>一些有关关系型数据库的概念，一些关系源语</p>
 <hr>
 <h2 id="lecture-02---modern-sql">Lecture #02 - Modern SQL</h2>
 <p><a target="_blank" rel="noopener" href="https://15445.courses.cs.cmu.edu/fall2024/notes/02-modernsql.pdf">Notes</a></p>
@@ -418,16 +418,59 @@ mjx-container[display="true"] + br {
 <li><p>Every page contains a header of meta-data about the page's contents (e.g., page size, checksum, DBMS version, transaction visibility, compression/encoding meta-data, schema information, data summary/sketches)</p></li>
 <li><p>页面中组织数据三种方式：Tuple-oriented Storage, Log-structured Storage, Index-organized Storage</p></li>
 <li><p>Tuple-oriented Storage 的一种普遍的实现方式：slotted pages</p>
-<p><img src="https://p.ipic.vip/qm12mh.png" alt="image-20250112030826236" style="zoom:80%;"></p></li>
+<p><img src="https://p.ipic.vip/qm12mh.png" alt="image-20250112030826236" style="zoom:80%;"></p>
+<ul>
+<li>插入一个新元组：
+<ul>
+<li>检查 page directory 找到一个有 free slot 的 page</li>
+<li>如果不在内存中的话从磁盘中检索该 page</li>
+<li>检查 slot array 找到可以盛下的空位</li>
+</ul></li>
+<li>利用 Record ID 更新已有的元组:
+<ul>
+<li>检查 page directory 找到 page 位置</li>
+<li>如果不在内存中的话从磁盘中检索该 page</li>
+<li>检查 slot array 找到偏移量</li>
+<li>如果新数据可以盛下就覆盖原有数据，否则把原有数据标记删除，在新页面插入一个新版本</li>
+</ul></li>
+</ul></li>
 <li><p>Record IDs: The DBMS assigns each logical tuple a unique record identifier that that represents its physical location in the database (but shouldn't be relied on to fetch data)</p></li>
 </ol>
 <p>最后 tuple layout 的部分 Andy 教授没有讲完，有一些疑惑问了 ChatGPT，记录一下</p>
 <ol start="9" type="1">
-<li>A tuple is essentially a sequence of bytes. These bytes do not have to be contiguous. 分散存储可以支持可变长度属性，优化存储空间利用率、提升查询和更新性能、适应复杂的页存储结构和事务管理需求</li>
-<li>tuple 存储的时候也有自己的 header，主要存储 Visibility info（事务信息，支持并发控制）和 Null Bitmap（空值位图），不存储每个 attribute 的类型，这个是表级别的 meta-data</li>
-<li>Denormalize: If two tables are related, the DBMS can "pre-join" them, so the tables end up on the same page. This makes reads faster since the DBMS only has to load in one page rather than two separate pages. However, it makes updates more expensive since the DBMS needs more space for each tuple.</li>
+<li>A tuple is essentially a sequence of bytes. <strong>These bytes do not have to be contiguous.</strong> 这个下一节的 <code>large value</code> 会提到</li>
+<li>tuple 存储的时候也有自己的 header，主要存储 Visibility info（事务信息，支持并发控制）和 Null Bitmap（空值位图），不存储每个 attribute 的类型，这个下一节的 <code>system catalogs</code> 会提到</li>
+<li>Denormalize: If two tables are related, the DBMS can "pre-join" them, so the tables end up on the same page. This makes reads faster since the DBMS only has to load in one page rather than two separate pages. However, it makes updates more expensive since the DBMS needs more space for each tuple</li>
 </ol>
 <hr>
 <h2 id="lecture-04---database-storage-ii">Lecture #04 - Database Storage II</h2>
 <p><a target="_blank" rel="noopener" href="https://15445.courses.cs.cmu.edu/fall2024/notes/04-storage2.pdf">Notes</a></p>
-</p><div class="tip">本文采用CC-BY-SA-3.0协议，转载请注明出处<br>作者: wsy_jim</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-12-09</span><i class="fa fa-tag"></i><a class="tag" href="/tags/CMU/" title="CMU">CMU </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Databases/" title="Databases">Databases </a><span class="leancloud_visitors"></span><span>大约7715个字, 25分钟43秒读完</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,https://wsyunine.github.io/2024/12/09/CMU15445-learning-note/,M-071的甲板,CMU15445学习笔记,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2024/12/27/better-terminal/" title="更好的终端模组">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2024/12/04/Mysql-learning-2/" title="MySQL 学习笔记进阶篇">下一篇</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"页面",CATEGORIES:"分类",TAGS:"标签",UNTITLED:"(无标题)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
+<h3 id="log-structured-storage">Log-Structured Storage</h3>
+<p>查询/修改过程：</p>
+<p><img src="https://p.ipic.vip/fsm2r4.png" alt="image-20250112062356080" style="zoom:80%;"></p>
+<p><img src="https://p.ipic.vip/v4hnac.png" alt="image-20250112062425849" style="zoom:80%;"></p>
+<p>SummaryTable 会告诉你你要找的数据在不在某一个 level</p>
+<p><img src="https://p.ipic.vip/eq4xv1.png" alt="image-20250112064529446" style="zoom:80%;"></p>
+<p>SSTables 的压缩过程：</p>
+<p><img src="https://p.ipic.vip/25wsoa.png" alt="image-20250112065519014" style="zoom:80%;"></p>
+<p>缺点：</p>
+<ul>
+<li>写放大（Write-Amplification）：在一个写操作后，这个操作会被重写若干次</li>
+<li>压缩成本高（Compaction is expensive）</li>
+</ul>
+<h3 id="index-organized-storage">Index-Organized Storage</h3>
+<p>B+树为例</p>
+<p><img src="https://p.ipic.vip/n9yx03.png" alt="image-20250112070825294" style="zoom:80%;"></p>
+<h3 id="tuple-storage">Tuple Storage</h3>
+<ol type="1">
+<li>Data 只是一些 bytes，类型甚至是 unsigned char*，我们需要 <code>reinterpret_cast&lt;int32_t*&gt;(address)</code> （在C++中）</li>
+<li></li>
+</ol>
+<hr>
+<h2 id="project-1---buffer-pool-manager">Project #1 - Buffer Pool Manager</h2>
+<hr>
+<h2 id="lecture-05--">Lecture #05 -</h2>
+<hr>
+<h2 id="homework-2--">Homework #2 -</h2>
+<hr>
+</p><div class="tip">本文采用CC-BY-SA-3.0协议，转载请注明出处<br>作者: wsy_jim</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-12-09</span><i class="fa fa-tag"></i><a class="tag" href="/tags/CMU/" title="CMU">CMU </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Databases/" title="Databases">Databases </a><span class="leancloud_visitors"></span><span>大约7943个字, 26分钟28秒读完</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,https://wsyunine.github.io/2024/12/09/CMU15445-learning-note/,M-071的甲板,CMU15445学习笔记,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2024/12/27/better-terminal/" title="更好的终端模组">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2024/12/04/Mysql-learning-2/" title="MySQL 学习笔记进阶篇">下一篇</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"页面",CATEGORIES:"分类",TAGS:"标签",UNTITLED:"(无标题)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
