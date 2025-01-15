@@ -458,13 +458,29 @@ mjx-container[display="true"] + br {
 <li>写放大（Write-Amplification）：在一个写操作后，这个操作会被重写若干次</li>
 <li>压缩成本高（Compaction is expensive）</li>
 </ul>
+<p>Ideal for write-heavy workloads because it maximizes sequential disk I/O</p>
 <h3 id="index-organized-storage">Index-Organized Storage</h3>
 <p>B+树为例</p>
 <p><img src="https://p.ipic.vip/n9yx03.png" alt="image-20250112070825294" style="zoom:80%;"></p>
 <h3 id="tuple-storage">Tuple Storage</h3>
 <ol type="1">
 <li>Data 只是一些 bytes，类型甚至是 unsigned char*，我们需要 <code>reinterpret_cast&lt;int32_t*&gt;(address)</code> （在C++中）</li>
-<li></li>
+<li>为了使查询快速，我们要保证 tuple 的属性值是字节对齐的</li>
+<li>不一样的属性顺序排序可能会影响存储 tuple 的大小</li>
+</ol>
+<h3 id="data-representation">Data Representation</h3>
+<ol type="1">
+<li><p>单/双精度会有 rounding error，如果不能接受，使用 fixed precision numbers，如 numeric 和 decimal</p></li>
+<li><p>NULL Data Types</p>
+<ul>
+<li>Row-stores: Null Column Bitmap Header</li>
+<li>Column-stores: Special Valuew</li>
+<li>Per Attribute Null Flag，会打乱对齐，不建议</li>
+</ul></li>
+<li><p>处理 large values</p>
+<p>如果一个值需要的存储空间大于一个页了，DBMS 会将其存储在 overflow storage pages</p>
+<p><img src="https://p.ipic.vip/1ehuqg.png" alt="image-20250113230311835" style="zoom:80%;"></p>
+<p>一些系统允许把 large value 存在外部文件里，类型为 BLOB，但是 DBMS 就管不了了</p></li>
 </ol>
 <hr>
 <h2 id="project-1---buffer-pool-manager">Project #1 - Buffer Pool Manager</h2>
@@ -473,4 +489,4 @@ mjx-container[display="true"] + br {
 <hr>
 <h2 id="homework-2--">Homework #2 -</h2>
 <hr>
-</p><div class="tip">本文采用CC-BY-SA-3.0协议，转载请注明出处<br>作者: wsy_jim</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-12-09</span><i class="fa fa-tag"></i><a class="tag" href="/tags/Databases/" title="Databases">Databases </a><i class="fa fa-tag"></i><a class="tag" href="/tags/CMU/" title="CMU">CMU </a><span class="leancloud_visitors"></span><span>大约7943个字, 26分钟28秒读完</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,https://wsyunine.github.io/2024/12/09/CMU15445-learning-note/,M-071的甲板,CMU15445学习笔记,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2024/12/27/better-terminal/" title="更好的终端模组">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2024/12/04/Mysql-learning-2/" title="MySQL 学习笔记进阶篇">下一篇</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"页面",CATEGORIES:"分类",TAGS:"标签",UNTITLED:"(无标题)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
+</p><div class="tip">本文采用CC-BY-SA-3.0协议，转载请注明出处<br>作者: wsy_jim</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-12-09</span><i class="fa fa-tag"></i><a class="tag" href="/tags/CMU/" title="CMU">CMU </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Databases/" title="Databases">Databases </a><span class="leancloud_visitors"></span><span>大约8118个字, 27分钟3秒读完</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,https://wsyunine.github.io/2024/12/09/CMU15445-learning-note/,M-071的甲板,CMU15445学习笔记,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2024/12/27/better-terminal/" title="更好的终端模组">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2024/12/04/Mysql-learning-2/" title="MySQL 学习笔记进阶篇">下一篇</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"页面",CATEGORIES:"分类",TAGS:"标签",UNTITLED:"(无标题)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
