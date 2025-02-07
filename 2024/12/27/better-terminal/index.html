@@ -1,8 +1,111 @@
-<!DOCTYPE html><html lang="zh-CN" id="theme-light-mode"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="wsy_jim"><title>更好的终端模组 · M-071的甲板</title><meta name="description" content="改善 MacOS Terminal 的外观以及实用性，主要贴出来一些 References，以后还需要再配置一遍，这次配置得好乱，花了两三天，也不知道写得全不全
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
 
-用 Wezterm 代替 Terminal
-1brew install wezterm
-在 ~/.config/wezterm/wezt"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+        * {
+            box-sizing: border-box;
+            margin: auto;
+        }
+
+        body {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+            font-family: "Yeseva One";
+        }
+
+        video{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .shell{
+            position: relative;
+            max-width: 100vh;
+            aspect-ratio: 1/1;
+            display: flex;
+            border-radius: 50%;
+            overflow: hidden;
+            text-align: center;
+            filter: drop-shadow(-30px 30px 10px #006e9d);
+        }
+
+        .text-wrapper{
+            font-size: 70px;
+        }
+
+        span.wave{
+            background: -50% 0%/200% 100% linear-gradient(90deg, #606c2515, #334bff, #00170e1e);
+            color: transparent;
+            background-clip: text;
+            animation: flow 4s linear infinite;
+            padding: 10px 50px;
+        }
+
+        .text-author{
+            font-size: 50px;
+            text-align: right;
+        }
+
+        .line1, .line2{
+            display: block;
+        }
+
+        .box {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+        }
+
+        .box:nth-of-type(1) {
+            height: 35%;
+            opacity: 0.6;
+        }
+
+        .box:nth-of-type(2) {
+            height: 67%;
+            opacity: 0.5;
+        }
+
+        .box:nth-of-type(3) {
+            height: 93%;
+            opacity: 0.4;
+        }
+
+        .wave {
+            /* 创建两个径向渐变蒙版，模拟波浪的上下部分 */
+            -webkit-mask: radial-gradient(46.6px at 50% calc(100% - (27px + 38px)),
+                    #fff 99%, #ffffff00 101%), radial-gradient(46.6px at 50% calc(100% + 38px),
+                    #ffffff00 99%, #fff 101%) repeat-x;
+            /* 设置蒙版的大小，使波浪在水平上重复 */
+            -webkit-mask-size: calc(4*27px) 100%;
+            /* 设置蒙版的初始位置，调整波浪的位置 */
+            -webkit-mask-position: calc(50% - 2*27px) 0, 50% calc(100% - 27px);
+            animation: flow 5s linear infinite;
+        }
+
+        @keyframes flow {
+            100% {
+                /* 设置动画结束时的蒙版位置，使波浪看起来在移动 */
+                -webkit-mask-position: calc(50% - 6*27px) 0, calc(50% - 4*27px) calc(200% - 27px);
+            }
+        }
+
+
+    </style>
+
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -114,103 +217,24 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">首页</a></li><li> <a href="/archives">归档</a></li><li> <a href="/tags">标签</a></li><li> <a href="/about">关于</a></li><li> <a href="/links">友链</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/logo.jpg"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/logo.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">M-071的甲板</a></h3><div class="description"><p>A clean circle,a regular life,a simple love.</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/wsyunine"><i class="fa fa-github"></i></a></li><li><a href="mailto:wsyjim.0bb0@gmail.com"><i class="fa fa-envelope"></i></a></li><li><a target="_blank" rel="noopener" href="http://sighttp.qq.com/authd?IDKEY=3340307001"><i class="fa fa-qq"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.weibo.com/u/6600856981"><i class="fa fa-weibo"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span> 全站CC-BY-SA-3.0 </span><i class="fa fa-star"></i><span> wsy_jim</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><a href="https://github.com/Lhcfl/hexo-theme-anatolo" target="_blank">Anatolo </a></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>更好的终端模组</a></h3></div><div class="post-content"><p><p>改善 MacOS Terminal 的外观以及实用性，主要贴出来一些 <em>References</em>，以后还需要再配置一遍，这次配置得好乱，花了两三天，也不知道写得全不全</p>
-<span id="more"></span>
-<h2 id="用-wezterm-代替-terminal">用 Wezterm 代替 Terminal</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install wezterm</span><br></pre></td></tr></table></figure>
-<p>在 <code>~/.config/wezterm/wezterm.lua</code> 里配置</p>
-<p>配置文档：<a target="_blank" rel="noopener" href="https://wezfurlong.org/wezterm/config/files.html">LINK</a></p>
-<p>B站上搬运的教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1miWMe9Esq/?spm_id_from=333.337.search-card.all.click&amp;vd_source=4f5fdb95c437ce1caa54cd65376ba63a">LINK</a></p>
-<p>暂时配成这样，不太愿意加图：</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> wezterm = <span class="built_in">require</span>(<span class="string">"wezterm"</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">config</span> = wezterm.config_builder()</span><br><span class="line"></span><br><span class="line"><span class="built_in">config</span> = {</span><br><span class="line">	automatically_reload_config = <span class="literal">true</span>,</span><br><span class="line">	enable_tab_bar = <span class="literal">false</span>,</span><br><span class="line">	window_close_confirmation = <span class="string">"NeverPrompt"</span>,</span><br><span class="line">	window_decorations = <span class="string">"RESIZE"</span>,</span><br><span class="line">	default_cursor_style = <span class="string">"BlinkingBar"</span>,</span><br><span class="line">	color_scheme = <span class="string">"Nord (Gogh)"</span>,</span><br><span class="line">	font = wezterm.font(<span class="string">"Fira Code"</span>, { weight = <span class="string">"Bold"</span> }),</span><br><span class="line">	font_size = <span class="number">15</span>,</span><br><span class="line">	background = {</span><br><span class="line">		{</span><br><span class="line">			source = {</span><br><span class="line">				Color = <span class="string">"#282c35"</span>,</span><br><span class="line">			},</span><br><span class="line">			width = <span class="string">"100%"</span>,</span><br><span class="line">			height = <span class="string">"100%"</span>,</span><br><span class="line">			opacity = <span class="number">0.85</span>,</span><br><span class="line">		},</span><br><span class="line">	},</span><br><span class="line">	window_padding = {</span><br><span class="line">		left = <span class="number">30</span>,</span><br><span class="line">		right = <span class="number">30</span>,</span><br><span class="line">		top = <span class="number">30</span>,</span><br><span class="line">		bottom = <span class="number">30</span>,</span><br><span class="line">	},</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="built_in">config</span></span><br></pre></td></tr></table></figure>
-<figure>
-<img src="https://p.ipic.vip/p8kkmx.png" alt="image-20241227194724776"><figcaption aria-hidden="true">image-20241227194724776</figcaption>
-</figure>
-<p>等寒假有时间了设计一下</p>
-<p>添加了代码高亮和代码补全的插件，b站视频有讲，需要在 <code>.zshrc</code> 里配置：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</span><br><span class="line"></span><br><span class="line">(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES</span><br><span class="line">ZSH_HIGHLIGHT_STYLES[path]=none</span><br><span class="line">ZSH_HIGHLIGHT_STYLES[path_prefix]=none</span><br><span class="line"></span><br><span class="line">source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh</span><br></pre></td></tr></table></figure>
-<p>wezterm 的上下分屏：<code>Ctrl + Option + %</code></p>
-<p>wezterm 的左右分屏：<code>Ctrl + Option + "</code></p>
-<p>光标切屏：<code>Ctrl + Shift + 方向键</code></p>
-<p>一般就使用 tmux 的分屏比较好，上面的难记</p>
-<h2 id="用-neovim-搭建-pde">用 Neovim 搭建 PDE</h2>
-<p>费老劲学 <code>vim</code>，还得练</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install nvim</span><br></pre></td></tr></table></figure>
-<p>有图形化界面，还不错，外观还需要配置</p>
-<p>参考：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vcWXe4Evf?spm_id_from=333.788.videopod.sections&amp;vd_source=4f5fdb95c437ce1caa54cd65376ba63a">LINK</a></p>
-<p>上下分屏：<code>split</code></p>
-<p>左右分屏：<code>vs</code></p>
-<p>光标切屏：<code>Ctrl + h j k l</code></p>
-<p>我把 Lazyvim 的背景设成透明了</p>
-<h2 id="添加插件">添加插件</h2>
-<p>参考：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=mmqDYw9C30I">LINK</a></p>
-<h3 id="thefuck">thefuck</h3>
-<p>一个可以帮你修改打错的命令的插件，一旦你打错了一个命令，你就可以接着一句 <code>fuck</code>，它就会自己帮你改对</p>
-<p>在 <code>.zshrc</code> 中配置（alias可以改别名）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">eval $(thefuck --alias)</span><br><span class="line">eval $(thefuck --alias fk)</span><br></pre></td></tr></table></figure>
-<h3 id="eza">eza</h3>
-<p>更好的 <code>ls</code>，在 <code>.zshrc</code> 文件中配置（用 <code>eza</code> 替换 <code>ls</code>）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"</span><br></pre></td></tr></table></figure>
-<h3 id="tldr">tldr</h3>
-<p>告诉你这个关键字有一些什么有趣有用的用法</p>
-<h3 id="zoxide">zoxide</h3>
-<p>更好的 <code>cd</code>，在 <code>.zshrc</code> 文件中配置：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eval "$(zoxide init zsh)"</span><br></pre></td></tr></table></figure>
-<p>会记住你进过的文件夹，再进就不用一个一个 <code>cd</code> 了，如果有多个满足条件，空格 + Tab 选文件夹</p>
-<h3 id="powerlevel10k">powerlevel10k</h3>
-<p>一个终端主题，蛮好看</p>
-<h2 id="用-tmux-管理多个-terminal">用 tmux 管理多个 Terminal</h2>
-<p>参考：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=U-omALWIBos">LINK</a></p>
-<p>配置文件（<code>~/.tmux.conf</code>）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">set -g default-terminal "tmux-256color"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">set -g prefix C-a</span><br><span class="line">unbind C-b</span><br><span class="line">bind-key C-a send-prefix</span><br><span class="line"></span><br><span class="line">unbind %</span><br><span class="line">bind | split-window -h</span><br><span class="line"></span><br><span class="line">unbind '"'</span><br><span class="line">bind - split-window -v</span><br><span class="line"></span><br><span class="line">unbind r</span><br><span class="line">bind r source-file ~/.tmux.conf</span><br><span class="line"></span><br><span class="line">bind -r j resize-pane -D 5</span><br><span class="line">bind -r k resize-pane -U 5</span><br><span class="line">bind -r l resize-pane -R 5</span><br><span class="line">bind -r h resize-pane -L 5</span><br><span class="line"></span><br><span class="line">bind -r m resize-pane -Z</span><br><span class="line"></span><br><span class="line">set -g mouse on</span><br><span class="line"></span><br><span class="line">set-window-option -g mode-keys vi</span><br><span class="line"></span><br><span class="line">bind-key -T copy-mode-vi 'v' send -X begin-selection</span><br><span class="line">bind-key -T copy-mode-vi 'y' send -X copy-selection</span><br><span class="line"></span><br><span class="line">unbind -T copy-mode-vi MouseDragEnd1Pane</span><br><span class="line"></span><br><span class="line"># tpm plugin</span><br><span class="line">set -g @plugin 'tmux-plugins/tpm'</span><br><span class="line"></span><br><span class="line"># list of tmux plugins</span><br><span class="line">set -g @plugin 'christoomey/vim-tmux-navigator'</span><br><span class="line">set -g @plugin 'jimeh/tmux-themepack'</span><br><span class="line">set -g @plugin 'tmux-plugins/tmux-resurrect'</span><br><span class="line">set -g @plugin 'tmux-plugins/tmux-continuum'</span><br><span class="line"></span><br><span class="line">set -g @themepack 'powerline/default/cyan'</span><br><span class="line"></span><br><span class="line">set -g @resurrect-capture-pane-contents 'on'</span><br><span class="line">set -g @continuum-restore 'on'</span><br><span class="line"></span><br><span class="line">set -g @vim_navigator_mapping_left "C-Left C-h"  # use C-h and C-Left</span><br><span class="line">set -g @vim_navigator_mapping_right "C-Right C-l"</span><br><span class="line">set -g @vim_navigator_mapping_up "C-k"</span><br><span class="line">set -g @vim_navigator_mapping_down "C-j"</span><br><span class="line">set -g @vim_navigator_mapping_prev ""  # removes the C-\ binding</span><br><span class="line"></span><br><span class="line">set -g @vim_navigator_prefix_mapping_clear_screen ""</span><br><span class="line"></span><br><span class="line">set -g xterm-keys on</span><br><span class="line"></span><br><span class="line">run '~/.tmux/plugins/tpm/tpm'</span><br></pre></td></tr></table></figure>
-<p>快捷键：</p>
-<ul>
-<li>魔法前摇：<code>Ctrl + a</code></li>
-<li>上下分屏：<code>-</code></li>
-<li>左右分屏：<code>|</code></li>
-<li>光标切屏：<code>Ctrl + h j k l</code></li>
-<li>配置更新：<code>r</code></li>
-<li>改变分屏大小：<code>h j k l</code></li>
-<li>分屏窗口最大化/最小化：<code>m</code></li>
-<li>vi 风格移动光标和页面</li>
-<li>安装插件：<code>I</code></li>
-<li>新建窗口：<code>c</code></li>
-<li>切换窗口：窗口代号</li>
-<li>窗口重命名：<code>,</code></li>
-<li>切换到相邻窗口：<code>p n</code></li>
-<li>切换到相邻终端：<code>( )</code><br>
-</li>
-<li>窗口及终端信息：<code>w</code></li>
-<li>退出复制模式：<code>Ctrl + C</code></li>
-</ul>
-<h2 id="neovim-配置-c-编译环境">Neovim 配置 C++ 编译环境</h2>
-<p>一些理论：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/643033884">LINK</a></p>
-<p>要装插件还是得先学习 <code>lazyvim</code> 的结构：<a target="_blank" rel="noopener" href="https://lazyvim-ambitious-devs.phillips.codes/">LINK</a></p>
-<ul>
-<li><code>LSP</code>、代码补全、代码高亮和结构解析、编译器</li>
-</ul>
-<p>之前用 <code>VScode</code> 装过，不用再次装</p>
-<ul>
-<li>代码片段用 <code>luasnip</code></li>
-</ul>
-<p>参考：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Vr7A90_tSns&amp;list=PL0EgBggsoPCnZ3a6c0pZuQRMgS_Z8-Fnr">LINK</a></p>
-<p>我用 <code>&lt;c-u&gt;</code> 替换了 <code>&lt;c-i&gt;</code> 因为其哈希值与 <code>&lt;Tab&gt;</code> 相同，缩进就用不了了</p>
-<ul>
-<li>代码格式化用 <code>clang-format</code></li>
-</ul>
-<p>在 <code>init.lua</code> 中配置：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim.opt.tabstop = 4 -- 实际 Tab 字符宽度</span><br><span class="line">vim.opt.shiftwidth = 4 -- 缩进宽度</span><br><span class="line">vim.opt.expandtab = true -- 用空格代替 Tab</span><br></pre></td></tr></table></figure>
-<ul>
-<li>调试用 <code>dap</code></li>
-</ul>
-<p>参考：<a target="_blank" rel="noopener" href="https://github.com/mfussenegger/nvim-dap?tab=readme-ov-file">LINK</a></p>
-<ul>
-<li>另外设置了快捷键 <code>&lt;leader&gt;r</code> 普通编译以及 <code>&lt;leader&gt;R</code> 调试编译</li>
-<li>添加了 <code>vim-tmux-navigator</code> 插件，让窗口切换可以横跨 tmux 和 nvim</li>
-<li>切换了 <code>catppuccin</code> 主题</li>
-<li>待添加：git 相关插件以及 <a target="_blank" rel="noopener" href="https://github.com/Kurama622/llm.nvim/tree/main">AI 支持</a></li>
-</ul>
-<figure>
-<img src="https://p.ipic.vip/dnqvex.png" alt="image-20241229125239973"><figcaption aria-hidden="true">image-20241229125239973</figcaption>
-</figure>
-</p></div><div class="post-footer"><div class="tip">本文采用CC-BY-SA-3.0协议，转载请注明出处<br>作者: wsy_jim</div><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-12-27</span><i class="fa fa-tag"></i><a class="tag" href="/tags/MacOS/" title="MacOS">MacOS </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Terminal/" title="Terminal">Terminal </a><span class="leancloud_visitors"></span><span>大约1155个字, 3分钟51秒读完</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/intent/tweet?text=%E5%88%86%E4%BA%AB%E6%96%87%E7%AB%A0%EF%BC%9A%0A%0AM-071%E7%9A%84%E7%94%B2%E6%9D%BF%20%C2%B7%20%E6%9B%B4%E5%A5%BD%E7%9A%84%E7%BB%88%E7%AB%AF%E6%A8%A1%E7%BB%84%0Ahttps://wsyunine.github.io/2024/12/27/better-terminal/%0A"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2025/01/12/shell-learning/" title="两种项目编译方式及其延伸">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2024/12/09/CMU15445-learning-note/" title="CMU15445学习笔记">下一篇</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/darkLightToggle.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"页面",CATEGORIES:"分类",TAGS:"标签",UNTITLED:"(无标题)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
+</style></head>
+<body>
+    <div class="shell">
+        <div class="box wave"></div>
+        <div class="box wave"></div>
+        <div class="box wave"></div>
+        <div class="text-wrapper">
+            <div class="text-content">
+                <span class="wave line1">Feet wander,</span>
+                <span class="wave line2">roots remember.</span>
+            </div>
+            <div class="text-author">
+                <span class="wave">——WSY_JIM</span>
+            </div>
+        </div>
+    </div>
+    <video autoplay loop muted>
+        <source src="./Anime In the Rain.mp4">
+    </video>
+</body>
+</html>

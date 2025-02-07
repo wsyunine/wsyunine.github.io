@@ -1,9 +1,111 @@
-<!DOCTYPE html><html lang="zh-CN" id="theme-light-mode"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="wsy_jim"><title>关于我 · M-071的甲板</title><meta name="description" content="本人为华南理工大学  级软件工程专业在校生，此blog用来记录日常与学习心得
-可以通过以下方式找到我：
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
 
-WeChat：wsy_jim
-Github：wsyunine
-bilibili ：wsy_jim"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+        * {
+            box-sizing: border-box;
+            margin: auto;
+        }
+
+        body {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+            font-family: "Yeseva One";
+        }
+
+        video{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .shell{
+            position: relative;
+            max-width: 100vh;
+            aspect-ratio: 1/1;
+            display: flex;
+            border-radius: 50%;
+            overflow: hidden;
+            text-align: center;
+            filter: drop-shadow(-30px 30px 10px #006e9d);
+        }
+
+        .text-wrapper{
+            font-size: 70px;
+        }
+
+        span.wave{
+            background: -50% 0%/200% 100% linear-gradient(90deg, #606c2515, #334bff, #00170e1e);
+            color: transparent;
+            background-clip: text;
+            animation: flow 4s linear infinite;
+            padding: 10px 50px;
+        }
+
+        .text-author{
+            font-size: 50px;
+            text-align: right;
+        }
+
+        .line1, .line2{
+            display: block;
+        }
+
+        .box {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+        }
+
+        .box:nth-of-type(1) {
+            height: 35%;
+            opacity: 0.6;
+        }
+
+        .box:nth-of-type(2) {
+            height: 67%;
+            opacity: 0.5;
+        }
+
+        .box:nth-of-type(3) {
+            height: 93%;
+            opacity: 0.4;
+        }
+
+        .wave {
+            /* 创建两个径向渐变蒙版，模拟波浪的上下部分 */
+            -webkit-mask: radial-gradient(46.6px at 50% calc(100% - (27px + 38px)),
+                    #fff 99%, #ffffff00 101%), radial-gradient(46.6px at 50% calc(100% + 38px),
+                    #ffffff00 99%, #fff 101%) repeat-x;
+            /* 设置蒙版的大小，使波浪在水平上重复 */
+            -webkit-mask-size: calc(4*27px) 100%;
+            /* 设置蒙版的初始位置，调整波浪的位置 */
+            -webkit-mask-position: calc(50% - 2*27px) 0, 50% calc(100% - 27px);
+            animation: flow 5s linear infinite;
+        }
+
+        @keyframes flow {
+            100% {
+                /* 设置动画结束时的蒙版位置，使波浪看起来在移动 */
+                -webkit-mask-position: calc(50% - 6*27px) 0, calc(50% - 4*27px) calc(200% - 27px);
+            }
+        }
+
+
+    </style>
+
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -115,11 +217,24 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">首页</a></li><li> <a href="/archives">归档</a></li><li> <a href="/tags">标签</a></li><li> <a class="current" href="/about">关于</a></li><li> <a href="/links">友链</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/logo.jpg"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/logo.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">M-071的甲板</a></h3><div class="description"><p>A clean circle,a regular life,a simple love.</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/wsyunine"><i class="fa fa-github"></i></a></li><li><a href="mailto:wsyjim.0bb0@gmail.com"><i class="fa fa-envelope"></i></a></li><li><a target="_blank" rel="noopener" href="http://sighttp.qq.com/authd?IDKEY=3340307001"><i class="fa fa-qq"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.weibo.com/u/6600856981"><i class="fa fa-weibo"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span> 全站CC-BY-SA-3.0 </span><i class="fa fa-star"></i><span> wsy_jim</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><a href="https://github.com/Lhcfl/hexo-theme-anatolo" target="_blank">Anatolo </a></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>关于我</a></h3></div><div class="post-content"><p><p>本人为华南理工大学 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="4.525ex" height="1.557ex" role="img" focusable="false" viewBox="0 -666 2000 688"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" transform="translate(1000,0)"></path><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z" transform="translate(1500,0)"></path></g></g></g></svg></mjx-container></span> 级软件工程专业在校生，此blog用来记录日常与学习心得</p>
-<p>可以通过以下方式找到我：</p>
-<ul>
-<li>WeChat：wsy_jim</li>
-<li>Github：wsyunine</li>
-<li>bilibili ：wsy_jim</li>
-</ul>
-</p></div><div class="post-footer"><div class="tip">本文采用CC-BY-SA-3.0协议，转载请注明出处<br>作者: wsy_jim</div><div class="meta"><div class="info"><span></span></div></div></div></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/darkLightToggle.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"页面",CATEGORIES:"分类",TAGS:"标签",UNTITLED:"(无标题)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
+</style></head>
+<body>
+    <div class="shell">
+        <div class="box wave"></div>
+        <div class="box wave"></div>
+        <div class="box wave"></div>
+        <div class="text-wrapper">
+            <div class="text-content">
+                <span class="wave line1">Feet wander,</span>
+                <span class="wave line2">roots remember.</span>
+            </div>
+            <div class="text-author">
+                <span class="wave">——WSY_JIM</span>
+            </div>
+        </div>
+    </div>
+    <video autoplay loop muted>
+        <source src="./Anime In the Rain.mp4">
+    </video>
+</body>
+</html>

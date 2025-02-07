@@ -1,4 +1,111 @@
-<!DOCTYPE html><html lang="zh-CN" id="theme-light-mode"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="wsy_jim"><title>M-071的甲板</title><meta name="description" content="A clean circle,a regular life,a simple love."><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+
+        * {
+            box-sizing: border-box;
+            margin: auto;
+        }
+
+        body {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+            font-family: "Yeseva One";
+        }
+
+        video{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .shell{
+            position: relative;
+            max-width: 100vh;
+            aspect-ratio: 1/1;
+            display: flex;
+            border-radius: 50%;
+            overflow: hidden;
+            text-align: center;
+            filter: drop-shadow(-30px 30px 10px #006e9d);
+        }
+
+        .text-wrapper{
+            font-size: 70px;
+        }
+
+        span.wave{
+            background: -50% 0%/200% 100% linear-gradient(90deg, #606c2515, #334bff, #00170e1e);
+            color: transparent;
+            background-clip: text;
+            animation: flow 4s linear infinite;
+            padding: 10px 50px;
+        }
+
+        .text-author{
+            font-size: 50px;
+            text-align: right;
+        }
+
+        .line1, .line2{
+            display: block;
+        }
+
+        .box {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+        }
+
+        .box:nth-of-type(1) {
+            height: 35%;
+            opacity: 0.6;
+        }
+
+        .box:nth-of-type(2) {
+            height: 67%;
+            opacity: 0.5;
+        }
+
+        .box:nth-of-type(3) {
+            height: 93%;
+            opacity: 0.4;
+        }
+
+        .wave {
+            /* 创建两个径向渐变蒙版，模拟波浪的上下部分 */
+            -webkit-mask: radial-gradient(46.6px at 50% calc(100% - (27px + 38px)),
+                    #fff 99%, #ffffff00 101%), radial-gradient(46.6px at 50% calc(100% + 38px),
+                    #ffffff00 99%, #fff 101%) repeat-x;
+            /* 设置蒙版的大小，使波浪在水平上重复 */
+            -webkit-mask-size: calc(4*27px) 100%;
+            /* 设置蒙版的初始位置，调整波浪的位置 */
+            -webkit-mask-position: calc(50% - 2*27px) 0, 50% calc(100% - 27px);
+            animation: flow 5s linear infinite;
+        }
+
+        @keyframes flow {
+            100% {
+                /* 设置动画结束时的蒙版位置，使波浪看起来在移动 */
+                -webkit-mask-position: calc(50% - 6*27px) 0, calc(50% - 4*27px) calc(200% - 27px);
+            }
+        }
+
+
+    </style>
+
+<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -110,4 +217,24 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a class="current" href="/">首页</a></li><li> <a href="/archives">归档</a></li><li> <a href="/tags">标签</a></li><li> <a href="/about">关于</a></li><li> <a href="/links">友链</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/logo.jpg"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/logo.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">M-071的甲板</a></h3><div class="description"><p>A clean circle,a regular life,a simple love.</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/wsyunine"><i class="fa fa-github"></i></a></li><li><a href="mailto:wsyjim.0bb0@gmail.com"><i class="fa fa-envelope"></i></a></li><li><a target="_blank" rel="noopener" href="http://sighttp.qq.com/authd?IDKEY=3340307001"><i class="fa fa-qq"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.weibo.com/u/6600856981"><i class="fa fa-weibo"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span> 全站CC-BY-SA-3.0 </span><i class="fa fa-star"></i><span> wsy_jim</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><a href="https://github.com/Lhcfl/hexo-theme-anatolo" target="_blank">Anatolo </a></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2025/01/12/shell-learning/">两种项目编译方式及其延伸</a></h3></div><div class="post-content"><div class="card"><p><p>tsoding 大大写项目用 <code>shell</code> 脚本+ <code>clang</code> 来编译，CMU15445 的 Bustub 项目用 <code>CMake</code> 来编译，我来简单搜集信息</p></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2025-01-12</span><i class="fa fa-tag"></i><a class="tag" href="/tags/shell/" title="shell">shell </a><i class="fa fa-tag"></i><a class="tag" href="/tags/cmake/" title="cmake">cmake </a><span class="leancloud_visitors"></span><span>大约1691个字, 5分钟38秒读完</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2024/12/27/better-terminal/">更好的终端模组</a></h3></div><div class="post-content"><div class="card"><p><p>改善 MacOS Terminal 的外观以及实用性，主要贴出来一些 <em>References</em>，以后还需要再配置一遍，这次配置得好乱，花了两三天，也不知道写得全不全</p></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-12-27</span><i class="fa fa-tag"></i><a class="tag" href="/tags/MacOS/" title="MacOS">MacOS </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Terminal/" title="Terminal">Terminal </a><span class="leancloud_visitors"></span><span>大约1155个字, 3分钟51秒读完</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2024/12/09/CMU15445-learning-note/">CMU15445学习笔记</a></h3></div><div class="post-content"><div class="card"><p><p>学一学CMU的15445，<a target="_blank" rel="noopener" href="https://15445.courses.cs.cmu.edu/fall2024/">课程地址</a></p></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-12-09</span><i class="fa fa-tag"></i><a class="tag" href="/tags/CMU/" title="CMU">CMU </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Databases/" title="Databases">Databases </a><span class="leancloud_visitors"></span><span>大约8118个字, 27分钟3秒读完</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2024/12/04/Mysql-learning-2/">MySQL 学习笔记进阶篇</a></h3></div><div class="post-content"><div class="card"><p><p>数据库进阶学习</p></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-12-04</span><i class="fa fa-tag"></i><a class="tag" href="/tags/Databases/" title="Databases">Databases </a><i class="fa fa-tag"></i><a class="tag" href="/tags/MySQL/" title="MySQL">MySQL </a><span class="leancloud_visitors"></span><span>大约2127个字, 7分钟5秒读完</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2024/11/22/Mysql-learning-1/">MySQL 学习笔记基础篇</a></h3></div><div class="post-content"><div class="card"><p><p>数据库基础学习</p></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2024-11-22</span><i class="fa fa-tag"></i><a class="tag" href="/tags/Databases/" title="Databases">Databases </a><i class="fa fa-tag"></i><a class="tag" href="/tags/MySQL/" title="MySQL">MySQL </a><span class="leancloud_visitors"></span><span>大约2641个字, 8分钟48秒读完</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/12/24/modeling-prework/">数学建模——数据预处理</a></h3></div><div class="post-content"><div class="card"><p><p>写在前面：好久没更新博客了，不知道因为什么原因，考试周快过去了，插空更一个队长分享的一个课程的总结。</p></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-12-24</span><i class="fa fa-tag"></i><a class="tag" href="/tags/数学建模/" title="数学建模">数学建模 </a><span class="leancloud_visitors"></span><span>大约599个字, 1分钟59秒读完</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/10/30/three-algorithms-optimization/">最优化理论的三大非经典算法</a></h3></div><div class="post-content"><div class="card"><p><p>写在前面：要打数学建模，学点好玩的</p></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-10-30</span><i class="fa fa-tag"></i><a class="tag" href="/tags/数学建模/" title="数学建模">数学建模 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/Matlab/" title="Matlab">Matlab </a><i class="fa fa-tag"></i><a class="tag" href="/tags/模拟退火/" title="模拟退火">模拟退火 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/遗传算法/" title="遗传算法">遗传算法 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/神经网络/" title="神经网络">神经网络 </a><span class="leancloud_visitors"></span><span>大约513个字, 1分钟42秒读完</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/10/18/newcoder48C/">牛客挑战赛48C</a></h3></div><div class="post-content"><div class="card"><p><p>就非得写点东西吗</p></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-10-18</span><i class="fa fa-tag"></i><a class="tag" href="/tags/思维题/" title="思维题">思维题 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/prufer序列/" title="prufer序列">prufer序列 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/计数题/" title="计数题">计数题 </a><span class="leancloud_visitors"></span><span>大约353个字, 1分钟10秒读完</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/10/18/%5BGDCPC2023%5DBase-Station-Construction/">【GDCPC2023】Base Station Construction</a></h3></div><div class="post-content"><div class="card"><p><p>写在前面：没什么好写的</p></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-10-18</span><i class="fa fa-tag"></i><a class="tag" href="/tags/DP/" title="DP">DP </a><i class="fa fa-tag"></i><a class="tag" href="/tags/线段树/" title="线段树">线段树 </a><span class="leancloud_visitors"></span><span>大约614个字, 2分钟2秒读完</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/10/17/number-of-STs-on-CG/">有关完全图中生成树数量问题的思考</a></h3></div><div class="post-content"><div class="card"><p><p>写在前面：在复健矩阵的时候发现了 <code>[NOI2007]生成树计数</code> 这个题，遂起兴研究生成树计数</p></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-10-17</span><i class="fa fa-tag"></i><a class="tag" href="/tags/prufer序列/" title="prufer序列">prufer序列 </a><i class="fa fa-tag"></i><a class="tag" href="/tags/生成树/" title="生成树">生成树 </a><span class="leancloud_visitors"></span><span>大约1287个字, 4分钟17秒读完</span></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/page/2/">下一页</a></li></ul></div></div></div></div><script src="/js/darkLightToggle.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"页面",CATEGORIES:"分类",TAGS:"标签",UNTITLED:"(无标题)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
+</style></head>
+<body>
+    <div class="shell">
+        <div class="box wave"></div>
+        <div class="box wave"></div>
+        <div class="box wave"></div>
+        <div class="text-wrapper">
+            <div class="text-content">
+                <span class="wave line1">Feet wander,</span>
+                <span class="wave line2">roots remember.</span>
+            </div>
+            <div class="text-author">
+                <span class="wave">——WSY_JIM</span>
+            </div>
+        </div>
+    </div>
+    <video autoplay loop muted>
+        <source src="./Anime In the Rain.mp4">
+    </video>
+</body>
+</html>
