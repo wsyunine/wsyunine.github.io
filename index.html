@@ -4,106 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
 
-        * {
-            box-sizing: border-box;
-            margin: auto;
-        }
-
-        body {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            overflow: hidden;
-            font-family: "Yeseva One";
-        }
-
-        video{
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        .shell{
-            position: relative;
-            max-width: 100vh;
-            aspect-ratio: 1/1;
-            display: flex;
-            border-radius: 50%;
-            overflow: hidden;
-            text-align: center;
-            filter: drop-shadow(-30px 30px 10px #006e9d);
-        }
-
-        .text-wrapper{
-            font-size: 70px;
-        }
-
-        span.wave{
-            background: -50% 0%/200% 100% linear-gradient(90deg, #606c2515, #334bff, #00170e1e);
-            color: transparent;
-            background-clip: text;
-            animation: flow 4s linear infinite;
-            padding: 10px 50px;
-        }
-
-        .text-author{
-            font-size: 50px;
-            text-align: right;
-        }
-
-        .line1, .line2{
-            display: block;
-        }
-
-        .box {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-        }
-
-        .box:nth-of-type(1) {
-            height: 35%;
-            opacity: 0.6;
-        }
-
-        .box:nth-of-type(2) {
-            height: 67%;
-            opacity: 0.5;
-        }
-
-        .box:nth-of-type(3) {
-            height: 93%;
-            opacity: 0.4;
-        }
-
-        .wave {
-            /* 创建两个径向渐变蒙版，模拟波浪的上下部分 */
-            -webkit-mask: radial-gradient(46.6px at 50% calc(100% - (27px + 38px)),
-                    #fff 99%, #ffffff00 101%), radial-gradient(46.6px at 50% calc(100% + 38px),
-                    #ffffff00 99%, #fff 101%) repeat-x;
-            /* 设置蒙版的大小，使波浪在水平上重复 */
-            -webkit-mask-size: calc(4*27px) 100%;
-            /* 设置蒙版的初始位置，调整波浪的位置 */
-            -webkit-mask-position: calc(50% - 2*27px) 0, 50% calc(100% - 27px);
-            animation: flow 5s linear infinite;
-        }
-
-        @keyframes flow {
-            100% {
-                /* 设置动画结束时的蒙版位置，使波浪看起来在移动 */
-                -webkit-mask-position: calc(50% - 6*27px) 0, calc(50% - 4*27px) calc(200% - 27px);
-            }
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
 
 <meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
   direction: ltr;
@@ -219,6 +121,7 @@ mjx-container[display="true"] + br {
 }
 </style></head>
 <body>
+
     <div class="shell">
         <div class="box wave"></div>
         <div class="box wave"></div>
@@ -233,8 +136,114 @@ mjx-container[display="true"] + br {
             </div>
         </div>
     </div>
-    <video autoplay loop muted>
-        <source src="./Anime In the Rain.mp4">
-    </video>
+
+    <!-- <video autoplay loop muted> -->
+    <!-- <source srcset="/media/preview.jpg"> -->
+    <img src="/media/preview.jpg" alt="img1">
+    <!-- </video> -->
+
+    
+    <!-- 
+    <li>
+        <a href="2023/09/19/ABC320/">ABC320</a>
+    </li>
+    <br>
+
+    <li>
+        <a href="2023/09/16/AppleScript/">AppleScript学习笔记</a>
+    </li>
+    <br>
+
+    <li>
+        <a href="2023/09/08/CF1872/">CF1872</a>
+    </li>
+    <br>
+
+    <li>
+        <a href="2023/09/26/CF1879/">CF1879</a>
+    </li>
+    <br>
+
+    <li>
+        <a href="2023/09/30/CF1882/">CF1882</a>
+    </li>
+    <br>
+
+    <li>
+        <a href="2024/12/09/CMU15445-learning-note/">CMU15445学习笔记</a>
+    </li>
+    <br>
+
+    <li>
+        <a href="2023/08/08/English-articles/">四级作文备考</a>
+    </li>
+    <br>
+
+    <li>
+        <a href="2024/12/04/Mysql-learning-2/">MySQL 学习笔记进阶篇</a>
+    </li>
+    <br>
+
+    <li>
+        <a href="2023/10/18/[GDCPC2023]Base-Station-Construction/">【GDCPC2023】Base Station Construction</a>
+    </li>
+    <br>
+
+    <li>
+        <a href="2023/10/13/good-problem/">瞎做到的好题</a>
+    </li>
+    <br>
+
+    <li>
+        <a href="2023/12/24/modeling-prework/">数学建模——数据预处理</a>
+    </li>
+    <br>
+
+    <li>
+        <a href="2023/09/06/new-student/">你不是第一次当新生了，应该知道怎么做了吧</a>
+    </li>
+    <br>
+
+    <li>
+        <a href="2024/12/27/better-terminal/">更好的终端模组</a>
+    </li>
+    <br>
+
+    <li>
+        <a href="2023/10/18/newcoder48C/">牛客挑战赛48C</a>
+    </li>
+    <br>
+
+    <li>
+        <a href="2023/10/17/number-of-STs-on-CG/">有关完全图中生成树数量问题的思考</a>
+    </li>
+    <br>
+
+    <li>
+        <a href="2023/09/07/partition-problems/">练一些分治题</a>
+    </li>
+    <br>
+
+    <li>
+        <a href="2025/01/12/shell-learning/">两种项目编译方式及其延伸</a>
+    </li>
+    <br>
+
+    <li>
+        <a href="2023/10/30/three-algorithms-optimization/">最优化理论的三大非经典算法</a>
+    </li>
+    <br>
+
+    <li>
+        <a href="2024/11/22/Mysql-learning-1/">MySQL 学习笔记基础篇</a>
+    </li>
+    <br>
+
+    <li>
+        <a href="2023/08/06/training-1/">康复训练</a>
+    </li>
+    <br>
+
+ -->
 </body>
 </html>

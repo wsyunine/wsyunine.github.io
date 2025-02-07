@@ -4,106 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
 
-        * {
-            box-sizing: border-box;
-            margin: auto;
-        }
-
-        body {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            overflow: hidden;
-            font-family: "Yeseva One";
-        }
-
-        video{
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        .shell{
-            position: relative;
-            max-width: 100vh;
-            aspect-ratio: 1/1;
-            display: flex;
-            border-radius: 50%;
-            overflow: hidden;
-            text-align: center;
-            filter: drop-shadow(-30px 30px 10px #006e9d);
-        }
-
-        .text-wrapper{
-            font-size: 70px;
-        }
-
-        span.wave{
-            background: -50% 0%/200% 100% linear-gradient(90deg, #606c2515, #334bff, #00170e1e);
-            color: transparent;
-            background-clip: text;
-            animation: flow 4s linear infinite;
-            padding: 10px 50px;
-        }
-
-        .text-author{
-            font-size: 50px;
-            text-align: right;
-        }
-
-        .line1, .line2{
-            display: block;
-        }
-
-        .box {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-        }
-
-        .box:nth-of-type(1) {
-            height: 35%;
-            opacity: 0.6;
-        }
-
-        .box:nth-of-type(2) {
-            height: 67%;
-            opacity: 0.5;
-        }
-
-        .box:nth-of-type(3) {
-            height: 93%;
-            opacity: 0.4;
-        }
-
-        .wave {
-            /* 创建两个径向渐变蒙版，模拟波浪的上下部分 */
-            -webkit-mask: radial-gradient(46.6px at 50% calc(100% - (27px + 38px)),
-                    #fff 99%, #ffffff00 101%), radial-gradient(46.6px at 50% calc(100% + 38px),
-                    #ffffff00 99%, #fff 101%) repeat-x;
-            /* 设置蒙版的大小，使波浪在水平上重复 */
-            -webkit-mask-size: calc(4*27px) 100%;
-            /* 设置蒙版的初始位置，调整波浪的位置 */
-            -webkit-mask-position: calc(50% - 2*27px) 0, 50% calc(100% - 27px);
-            animation: flow 5s linear infinite;
-        }
-
-        @keyframes flow {
-            100% {
-                /* 设置动画结束时的蒙版位置，使波浪看起来在移动 */
-                -webkit-mask-position: calc(50% - 6*27px) 0, calc(50% - 4*27px) calc(200% - 27px);
-            }
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
 
 <meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
   direction: ltr;
@@ -219,6 +121,7 @@ mjx-container[display="true"] + br {
 }
 </style></head>
 <body>
+
     <div class="shell">
         <div class="box wave"></div>
         <div class="box wave"></div>
@@ -233,8 +136,29 @@ mjx-container[display="true"] + br {
             </div>
         </div>
     </div>
-    <video autoplay loop muted>
-        <source src="./Anime In the Rain.mp4">
-    </video>
+
+    <!-- <video autoplay loop muted> -->
+    <!-- <source srcset="/media/preview.jpg"> -->
+    <img src="/media/preview.jpg" alt="img1">
+    <!-- </video> -->
+
+    
+    <!-- <h1>CF1882</h1>
+<p>1696052964000</p>
+
+<hr>
+
+<p>写在前面：<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.394ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1500 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(500,0)"><g data-mml-node="mo"><path data-c="2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"></path></g></g><g data-mml-node="mn" transform="translate(1000,0)"><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"></path></g></g></g></svg></mjx-container></span> 睡觉场</p>
+<span id="more"></span>
+<h2 id="a">A</h2>
+<p>签到，以 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.131ex" height="1.507ex" role="img" focusable="false" viewBox="0 -666 500 666"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g></svg></mjx-container></span> 或 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.131ex" height="1.507ex" role="img" focusable="false" viewBox="0 -666 500 666"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g></svg></mjx-container></span> 开头，扫过去</p>
+<h2 id="b">B</h2>
+<p>不太友好的 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.717ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 759 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path></g></g></g></svg></mjx-container></span></p>
+<p>重构了一遍</p>
+<p>思想就是试着每次去除集合里的一个元素，并且模拟一下看看连带着会去除多少别的元素，肯定是去除的越少越好，考验码力</p>
+<h2 id="c">C</h2>
+<p>写完 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.717ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 759 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path></g></g></g></svg></mjx-container></span> 看完 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="1.719ex" height="1.645ex" role="img" focusable="false" viewBox="0 -705 760 727"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"></path></g></g></g></svg></mjx-container></span> 就睡了</p>
+
+ -->
 </body>
 </html>

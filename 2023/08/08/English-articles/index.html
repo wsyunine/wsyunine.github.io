@@ -4,106 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
 
-        * {
-            box-sizing: border-box;
-            margin: auto;
-        }
-
-        body {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            overflow: hidden;
-            font-family: "Yeseva One";
-        }
-
-        video{
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        .shell{
-            position: relative;
-            max-width: 100vh;
-            aspect-ratio: 1/1;
-            display: flex;
-            border-radius: 50%;
-            overflow: hidden;
-            text-align: center;
-            filter: drop-shadow(-30px 30px 10px #006e9d);
-        }
-
-        .text-wrapper{
-            font-size: 70px;
-        }
-
-        span.wave{
-            background: -50% 0%/200% 100% linear-gradient(90deg, #606c2515, #334bff, #00170e1e);
-            color: transparent;
-            background-clip: text;
-            animation: flow 4s linear infinite;
-            padding: 10px 50px;
-        }
-
-        .text-author{
-            font-size: 50px;
-            text-align: right;
-        }
-
-        .line1, .line2{
-            display: block;
-        }
-
-        .box {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-        }
-
-        .box:nth-of-type(1) {
-            height: 35%;
-            opacity: 0.6;
-        }
-
-        .box:nth-of-type(2) {
-            height: 67%;
-            opacity: 0.5;
-        }
-
-        .box:nth-of-type(3) {
-            height: 93%;
-            opacity: 0.4;
-        }
-
-        .wave {
-            /* 创建两个径向渐变蒙版，模拟波浪的上下部分 */
-            -webkit-mask: radial-gradient(46.6px at 50% calc(100% - (27px + 38px)),
-                    #fff 99%, #ffffff00 101%), radial-gradient(46.6px at 50% calc(100% + 38px),
-                    #ffffff00 99%, #fff 101%) repeat-x;
-            /* 设置蒙版的大小，使波浪在水平上重复 */
-            -webkit-mask-size: calc(4*27px) 100%;
-            /* 设置蒙版的初始位置，调整波浪的位置 */
-            -webkit-mask-position: calc(50% - 2*27px) 0, 50% calc(100% - 27px);
-            animation: flow 5s linear infinite;
-        }
-
-        @keyframes flow {
-            100% {
-                /* 设置动画结束时的蒙版位置，使波浪看起来在移动 */
-                -webkit-mask-position: calc(50% - 6*27px) 0, calc(50% - 4*27px) calc(200% - 27px);
-            }
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
 
 <meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
   direction: ltr;
@@ -219,6 +121,7 @@ mjx-container[display="true"] + br {
 }
 </style></head>
 <body>
+
     <div class="shell">
         <div class="box wave"></div>
         <div class="box wave"></div>
@@ -233,8 +136,30 @@ mjx-container[display="true"] + br {
             </div>
         </div>
     </div>
-    <video autoplay loop muted>
-        <source src="./Anime In the Rain.mp4">
-    </video>
+
+    <!-- <video autoplay loop muted> -->
+    <!-- <source srcset="/media/preview.jpg"> -->
+    <img src="/media/preview.jpg" alt="img1">
+    <!-- </video> -->
+
+    
+    <!-- <h1>四级作文备考</h1>
+<p>1691501396000</p>
+
+<hr>
+
+<p>写在前面：没什么好写的，就是复习作文素材</p>
+<span id="more"></span>
+<h2 id="ep1-mobile-games">ep1 Mobile Games</h2>
+<p>​ Nowadays mobile phones have become an <strong>inseparable</strong> social networking tool for college students,which results in the popularity of mobile games.Evidently,they <u>exert a profound impact on</u> the life of <strong>comtemporary</strong> college students.</p>
+<p>​ Admittedly,playing mobile games <u>is a good way to</u> relieve stress and anxiety.<u>Interactive entertainment</u> provides <strong>tangible</strong> benefits,such as hand-eye <strong>coordination</strong>,the increase in brain's activity and the boost in creativity.Also,competitve games can improve participants' team-building skills,which are essential to their academic cooperation.</p>
+<p>​ However,playing mobile games also has negative impacts on many college students.Some would become easily addicted to mobile games due to lack of self-control.Staring at mobile screens for many hours would lead to a <strong>sedentary</strong> lifestyle,causing <strong>eyestrain</strong> or headaches.Besides,too much exposure to violent languages and scenes will likely make college students more <strong>aggressive</strong>.</p>
+<p>​ In all,mobile games should be used <u>in a <strong>rational</strong> way</u>,and college students should <u>maximize their benefits</u> to achieve bigger success in their future life.</p>
+<h2 id="ep2-online-shopping">ep2 Online Shopping</h2>
+<p>​ Buying and selling online has become important parts of many people's lives.Consumers have <u>embraced</u> online shopping <u>as</u> a cheaper and more convenient way to buy what they want.However,the fact that shopping online is not really a cheap way cannot be <strong>neglected</strong>.</p>
+<p>​ Attracted by <u>discount <strong>coupons</strong></u> or other types of overwhelming promotions,consumers tend to <strong>overspend</strong> online.Sadly,<u>a large <strong>proportion</strong> of</u> those items they have bought online are later found unnecessary or useless.Once consumers want to return those items,they may be required to pay a return fee.Consumers also face losses on products like fruits and vegetables,which are very unlikely to be kept 100% fresh during transportation.Moreover,to achieve higher sales,<strong>unscrupulous</strong> businesses may display misleading,<strong>exaggerated</strong> and <strong>fraudulent</strong> information,leading to a higher risk of <strong>fraud</strong> and a huge loss of money for consumers.</p>
+<p>​ Therefore,to enjoy a truly lower price of online products,we should go through websites carefully,and <u>think twice before</u> we choose to pay for the products.</p>
+
+ -->
 </body>
 </html>
