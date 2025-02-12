@@ -1,154 +1,166 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title><meta name="robots" content="noindex">
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head prefix="og: https://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  
+  <title>Graph Theory学习笔记 - M-071的甲板</title><meta name="robots" content="noindex">
+  
+    <link rel="shortcut icon" href="/images/favicon.png">
+  
+  
+    <link rel='manifest' href='/images/manifest.json'>
+  
 
-    <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+  <meta property="og:title" content="Graph Theory学习笔记 - M-071的甲板" />
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:url" content="https://wsyunine.github.io/2023/10/24/Graph-Theory/index.html" />
+  
+  <meta property="og:image" content="/favicon.png" />
+  
+  <meta property="og:article:published_time" content="2023-10-24T10:04:01.000Z" />
+  
+  <meta property="og:article:author" content="wsy_jim" />
+  
+  
 
-<meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
-  direction: ltr;
-}
+  
+<link rel="stylesheet" href="/css/var.css">
 
-mjx-container[jax="SVG"] > svg {
-  overflow: visible;
-}
+  
+<link rel="stylesheet" href="/css/main.css">
 
-mjx-container[jax="SVG"][display="true"] {
-  display: block;
-  text-align: center;
-  margin: 1em 0;
-}
+  
+<link rel="stylesheet" href="/css/typography.css">
 
-mjx-container[jax="SVG"][justify="left"] {
-  text-align: left;
-}
+  
+<link rel="stylesheet" href="/css/code-highlighting.css">
 
-mjx-container[jax="SVG"][justify="right"] {
-  text-align: right;
-}
+  
+<link rel="stylesheet" href="/css/components.css">
 
-g[data-mml-node="merror"] > g {
-  fill: red;
-  stroke: red;
-}
+  
+<link rel="stylesheet" href="/css/nav.css">
 
-g[data-mml-node="merror"] > rect[data-background] {
-  fill: yellow;
-  stroke: none;
-}
+  
+<link rel="stylesheet" href="/css/paginator.css">
 
-g[data-mml-node="mtable"] > line[data-line] {
-  stroke-width: 70px;
-  fill: none;
-}
+  
+<link rel="stylesheet" href="/css/footer.css">
 
-g[data-mml-node="mtable"] > rect[data-frame] {
-  stroke-width: 70px;
-  fill: none;
-}
+  
+<link rel="stylesheet" href="/css/post-list.css">
 
-g[data-mml-node="mtable"] > .mjx-dashed {
-  stroke-dasharray: 140;
-}
+  
+  
+<link rel="stylesheet" href="/css/rainbow-banner.css">
 
-g[data-mml-node="mtable"] > .mjx-dotted {
-  stroke-linecap: round;
-  stroke-dasharray: 0,140;
-}
+  
+  
+  
+<link rel="stylesheet" href="/css/toc.css">
 
-g[data-mml-node="mtable"] > svg {
-  overflow: visible;
-}
+  
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/post.css">
 
-[jax="SVG"] mjx-tool {
-  display: inline-block;
-  position: relative;
-  width: 0;
-  height: 0;
-}
+  
+  
+  
+  
+  
 
-[jax="SVG"] mjx-tool > mjx-tip {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-mjx-tool > mjx-tip {
-  display: inline-block;
-  padding: .2em;
-  border: 1px solid #888;
-  font-size: 70%;
-  background-color: #F8F8F8;
-  color: black;
-  box-shadow: 2px 2px 5px #AAAAAA;
-}
-
-g[data-mml-node="maction"][data-toggle] {
-  cursor: pointer;
-}
-
-mjx-status {
-  display: block;
-  position: fixed;
-  left: 1em;
-  bottom: 1em;
-  min-width: 25%;
-  padding: .2em .4em;
-  border: 1px solid #888;
-  font-size: 90%;
-  background-color: #F8F8F8;
-  color: black;
-}
-
-foreignObject[data-mjx-xml] {
-  font-family: initial;
-  line-height: normal;
-  overflow: visible;
-}
-
-.MathJax path {
-  stroke-width: 3;
-}
-
-mjx-container[display="true"] {
-  overflow: auto hidden;
-}
-
-mjx-container[display="true"] + br {
-  display: none;
-}
-</style></head>
-<body>
-
-    <div class="shell">
-        <div class="box wave"></div>
-        <div class="box wave"></div>
-        <div class="box wave"></div>
-        <div class="text-wrapper">
-            <div class="text-content">
-                <span class="wave line1">Feet wander,</span>
-                <span class="wave line2">roots remember.</span>
-            </div>
-            <div class="text-author">
-                <span class="wave">——WSY_JIM</span>
-            </div>
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+    <body
+        data-color-scheme="light/dark/auto"
+        data-uppercase-categories="true"
+        
+        data-rainbow-banner="true"
+        data-rainbow-banner-shown="auto"
+        data-rainbow-banner-month="6"
+        data-rainbow-banner-colors="#e50000,#ff8d00,#ffee00,#008121,#004cff,#760188"
+        
+        data-config-root="/"
+        
+        data-toc="true"
+        data-toc-max-depth="2"
+        
+        
+    >
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/">M-071的甲板</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/">主页</a>
+            
+            
+            <a class="nav-item" href="/archives">Archives</a>
+            
+            
+            
+            <a class="nav-item" href="/about">About</a>
+            
+            
+            
+            <a class="nav-item nav-item-github nav-item-icon" href="https://github.com/wsyunine" target="_blank" aria-label="GitHub">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-discord nav-item-icon" href="https://discord.gg/wsy_jim" target="_blank" aria-label="Discord">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item" href="/tags">Tags</a>
+            
+            
+            
+            <a class="nav-item" href="/categories">Categories</a>
+            
+            
+            
+            <a class="nav-item nav-item-search nav-item-icon" href="/search" target="_blank" aria-label="Search">&nbsp;</a>
+            
+            
         </div>
     </div>
+</nav>
+        
+<article class="post">
+    <div class="meta">
+        
+        <div class="categories text-uppercase">
+        
+            <a href="/categories/算法/">算法</a>
+        
+        </div>
+        
 
-    <!-- <video autoplay loop muted> -->
-    <!-- <source srcset="/media/preview.jpg"> -->
-    <img src="/media/preview.jpg" alt="img1">
-    <!-- </video> -->
+        
+        <div class="date" id="date">
+            <span>October</span>
+            <span>24,</span>
+            <span>2023</span>
+        </div>
+        
 
-    
-    <!-- <h1>Graph Theory学习笔记</h1>
-<p>1698141841000</p>
+        <h1 class="title">Graph Theory学习笔记</h1>
+    </div>
 
-<hr>
+    <div class="divider"></div>
 
-<p>写在前面：开始学习图论</p>
+    <div class="content">
+        <p>写在前面：开始学习图论</p>
 <span id="more"></span>
 <h2 id="graph">1 Graph</h2>
 <h3 id="graphs-and-their-representation">1.1 Graphs and Their Representation</h3>
@@ -189,6 +201,110 @@ mjx-container[display="true"] + br {
 <p><em>cubic graph</em> : <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="1.131ex" height="1.554ex" role="img" focusable="false" viewBox="0 -665 500 687"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path></g></g></g></svg></mjx-container></span>-regular praphs</p>
 <p><em>isolated vertex</em></p>
 <!-- flag of hidden posts -->
- -->
-</body>
+    </div>
+
+    
+    <div class="about">
+        <h1>关于本文</h1>
+        <div class="details">
+            <p>由 wsy_jim 撰写, 采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a> 许可协议.</p>
+        </div>
+        
+        <p class="tags">
+            
+            <i class="icon"></i>
+            <a href="/tags/图论/" class="tag">#图论</a><a href="/tags/学习笔记/" class="tag">#学习笔记</a>
+        </p>
+        
+    </div>
+    
+
+    <div class="container post-prev-next">
+        <a class="next"></a>
+        <a class="prev"></a>
+    </div>
+
+    
+        
+        
+    
+</article>
+
+        <footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h2 class="title">Blog</h2>
+                
+                <a href="/" class="item">Blog</a>
+                
+                <a href="/archives" class="item">Archives</a>
+                
+                <a href="/tags" class="item">Tags</a>
+                
+                <a href="/categories" class="item">Categories</a>
+                
+                <a href="/about" class="item">About</a>
+                
+                <a href="/search" class="item">Search</a>
+                
+            </div>
+            
+            <div class="group">
+                <h2 class="title">Me</h2>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/wsyunine" class="item">GitHub</a>
+                
+                <a target="_blank" rel="noopener" href="https://discord.gg/wsy_jim" class="item">Discord</a>
+                
+                <a href="mailto:3340307001@qq.com" class="item">Email</a>
+                
+            </div>
+            
+        </div>
+        <span>&copy; 2025 wsy_jim<br>由 <a href="http://hexo.io/" target="_blank">Hexo</a> 驱动 </span>
+        
+        <br>
+        <span class="footer-extra-description">玄之又玄，众妙之门。</span>
+        
+        
+            <br>
+            <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
+                <label>
+                    <input type="radio" value="light">
+                    <span>Light</span>
+                </label>
+                <label>
+                    <input type="radio" value="dark">
+                    <span>Dark</span>
+                </label>
+                <label>
+                    <input type="radio" value="auto">
+                    <span>Auto</span>
+                </label>
+            </div>
+        
+    </div>
+</footer>
+
+
+        
+<script src="/js/main.js"></script>
+
+        
+        
+        
+
+        
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            window.addEventListener('load', () => {
+                ScrollReveal({ delay: 250, reset: true, easing: 'cubic-bezier(0, 0, 0, 1)' })
+                ScrollReveal().reveal('.post-list-item .cover-img img')
+                ScrollReveal().reveal('.post-list-item, .card, .content p img, .content .block-large img', { distance: '60px', origin: 'bottom', duration: 800 })
+            })
+        </script>
+        
+    </body>
 </html>
