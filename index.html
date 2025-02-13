@@ -137,7 +137,7 @@
 </nav>
         <div class="container">
     
-    <div class="hero">
+    <div class="hero exit-while-scroll">
         <div class="group">
             <h2 class="sub">哈哈哈哈</h2>
             <h2 class="large">南柯一梦</h2>
@@ -421,6 +421,7 @@
 </div>
 
 </div>
+
         <footer>
     <div class="inner">
         <div class="links">
@@ -479,6 +480,28 @@
             </div>
         
     </div>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("Lenis script loaded!");
+        
+        const lenis = new Lenis({
+            smooth: true,
+            lerp: 0.1,
+            wheelMultiplier: 1,
+            touchMultiplier: 2,
+            infinite: false
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+    });
+    </script>
 </footer>
 
 

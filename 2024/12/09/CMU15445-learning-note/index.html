@@ -532,7 +532,7 @@
         <p class="tags">
             
             <i class="icon"></i>
-            <a href="/tags/CMU/" class="tag">#CMU</a><a href="/tags/Databases/" class="tag">#Databases</a>
+            <a href="/tags/Databases/" class="tag">#Databases</a><a href="/tags/CMU/" class="tag">#CMU</a>
         </p>
         
     </div>
@@ -627,6 +627,28 @@
             </div>
         
     </div>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("Lenis script loaded!");
+        
+        const lenis = new Lenis({
+            smooth: true,
+            lerp: 0.1,
+            wheelMultiplier: 1,
+            touchMultiplier: 2,
+            infinite: false
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+    });
+    </script>
 </footer>
 
 
