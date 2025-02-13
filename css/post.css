@@ -6,6 +6,10 @@ body {
   margin: 128px 0;
 }
 
+.spf {
+    font-family: "00";
+}
+
 .meta .categories {
   color: var(--link);
   margin-bottom: 6px;

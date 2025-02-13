@@ -2,6 +2,14 @@
     transition: color 0.2s, background-color 0.2s;
 }
 
+@font-face {
+    font-family: "00";
+    src: url("/font/00.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+4E00-9FFF;
+}
+
 body {
     margin: 0;
     margin-top: 56px;
