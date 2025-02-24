@@ -399,6 +399,82 @@
 <p><strong>总结</strong></p>
 <p><strong>LLVM</strong> 是一个强大而灵活的编译器框架，它通过提供中间表示（IR）和跨平台支持，简化了编译器的开发，并大大提高了代码的优化效率。通过其高度模块化的设计，LLVM 可以支持多种语言和硬件平台，广泛应用于编译器开发、程序优化、JIT 编译以及跨平台应用程序的构建。它不仅适用于静态编译，还能够通过 JIT 编译提高动态语言的执行效率，是现代编译器技术和编程语言开发的重要工具之一。</p></li>
 </ol>
+<h2 id="lesson-2">Lesson 2</h2>
+<ol type="1">
+<li><p>Q：Lexemes 和 Tokens 有什么关联？</p>
+<p>A：在语言学和编程语言的处理中，<strong>lexemes</strong> 和 <strong>tokens</strong> 是两个密切相关的概念，但它们有所不同。</p>
+<p><strong>1. Lexemes（词素）</strong></p>
+<p>Lexeme 是源代码或文本中的<strong>最小的语义单元</strong>。它是一个抽象的概念，代表一个<strong>词汇项</strong>或<strong>基本单元</strong>。它不考虑具体的表现形式，只关心它的语义。例如，在编程语言中，“if”可以是一个 lexeme，表示条件语句。</p>
+<p><strong>2. Tokens（符号）</strong></p>
+<p>Token 是对 lexeme 的<strong>具体实例化</strong>，它是通过词法分析（lexical analysis）从源代码中提取的实际“符号”或者“标记”。一个 token 是 lexeme 的一个实际实现，在源代码中的<strong>具体表示</strong>。</p>
+<p><strong>关联与区别：</strong></p>
+<p>​ • <strong>关联</strong>：每个 token 代表一个 lexeme。在词法分析过程中，源代码中的字符被分解成多个 token，每个 token 对应一个 lexeme 的某个实例。</p>
+<p>​ • <strong>区别</strong>：lexeme 是语言中的抽象概念，而 token 是具体的、可以直接从源代码中提取的符号或标记。例如，x = 10 这行代码可能会被分解为：</p>
+<p>​ • x（一个标识符的 token）</p>
+<p>​ • =（一个赋值操作符的 token）</p>
+<p>​ • 10（一个整数值的 token）</p>
+<p>在这个过程中，x、= 和 10 分别是 <strong>tokens</strong>，而它们各自对应的 <strong>lexemes</strong> 是标识符、赋值符号和常数值。</p>
+<p>总结：</p>
+<p>​ • <strong>Lexemes</strong> 是语言的最小语义单位。</p>
+<p>​ • <strong>Tokens</strong> 是从文本中提取出的 lexeme 的实际实例，它们在语法分析和编译过程中起到了区分不同语法元素的作用。</p></li>
+<li><p>Q：给我一些例子，让我很快入手正则表达式。</p>
+<p>A：好的，下面是一些常见正则表达式及其解释：</p>
+<p><strong>基本匹配</strong></p>
+<p>​ • <strong>字符匹配</strong>：</p>
+<p>​ • a 匹配字母 a</p>
+<p>​ • \d 匹配一个数字（0-9）</p>
+<p>​ • \w 匹配一个字母、数字或下划线（字母、数字、下划线：[a-zA-Z0-9_]）</p>
+<p>​ • \s 匹配一个空白字符（空格、制表符、换行等）</p>
+<p>​ • <strong>匹配任何字符</strong>：</p>
+<p>​ • . 匹配任何单个字符（除了换行符）</p>
+<p><strong>量词</strong></p>
+<p>​ • <strong>次数限定</strong>：</p>
+<p>​ • a* 匹配零次或多次字母 a</p>
+<p>​ • a+ 匹配一次或多次字母 a</p>
+<p>​ • a? 匹配零次或一次字母 a</p>
+<p>​ • a{n} 匹配恰好 n 次字母 a</p>
+<p>​ • a{n,} 匹配至少 n 次字母 a</p>
+<p>​ • a{n,m} 匹配 n 到 m 次字母 a</p>
+<p><strong>字符集</strong></p>
+<p>​ • <strong>字符类</strong>：</p>
+<p>​ • [abc] 匹配 a、b 或 c</p>
+<p>​ • [^abc] 匹配除 a、b、c 之外的任意字符</p>
+<p>​ • [0-9] 匹配任意数字</p>
+<p>​ • [a-z] 匹配任意小写字母</p>
+<p>​ • [A-Z] 匹配任意大写字母</p>
+<p>​ • [a-zA-Z0-9] 匹配任意字母或数字</p>
+<p><strong>边界匹配</strong></p>
+<p>​ • <strong>行/词边界</strong>：</p>
+<p>​ • ^ 匹配字符串开头</p>
+<p>​ • $ 匹配字符串结尾</p>
+<p>​ • \b 匹配单词边界</p>
+<p>​ • \B 匹配非单词边界</p>
+<p><strong>分组和选择</strong></p>
+<p>​ • <strong>分组</strong>：</p>
+<p>​ • (abc) 匹配字符串 abc，并作为一个整体分组</p>
+<p>​ • (a|b) 匹配 a 或 b（分支结构）</p>
+<p><strong>反向引用</strong></p>
+<p>​ • <strong>引用分组</strong>：</p>
+<p>​ • (\d)\1 匹配两个相同的数字（第一个分组 \d 匹配一个数字，\1 引用该数字）</p>
+<p><strong>例子</strong></p>
+<p>​ 1. <strong>匹配电话号码（假设格式为 123-456-7890）</strong>：</p>
+<p>​ • \d{3}-\d{3}-\d{4}</p>
+<p>​ 2. <strong>匹配邮箱地址</strong>：</p>
+<p>​ • <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>+@[\w-]+\.[a-z]{2,3}$（简单版，允许字母、数字和 -）</p>
+<p>​ 3. <strong>匹配日期（格式：YYYY-MM-DD）</strong>：</p>
+<p>​ • ^\d{4}-\d{2}-\d{2}$</p>
+<p>​ 4. <strong>匹配URL</strong>：</p>
+<p>​ • https?://[\w-]+(\.[\w-]+)+(:\d+)?(/\S*)?</p>
+<p>​ 5. <strong>匹配数字（整数或小数）</strong>：</p>
+<p>​ • ^-?\d+(\.\d+)?$</p>
+<p>这些是常见的正则表达式及其应用，能够处理很多常见的字符串匹配和操作需求。</p></li>
+</ol>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1" role="doc-endnote"><p>\w-<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
     </div>
 
