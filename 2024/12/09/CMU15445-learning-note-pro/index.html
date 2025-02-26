@@ -325,7 +325,11 @@
 <hr>
 <h2 id="project-1---buffer-pool-manager">Project #1 - Buffer Pool Manager</h2>
 <h3 id="task-1---lru-k-replacement-policy">Task #1 - LRU-K Replacement Policy</h3>
-<p>要求实现一个 LRU 替换算法，具体实现就是整了一个容器叫 LRU-K Replacer，然后对其中的 frames 进行计算和操作</p>
+<p>要求实现一个 LRU-K 替换算法，具体实现就是整了一个容器叫 LRU-K Replacer，然后对其中的 frames 进行计算和操作</p>
+<p>画了个小图来表示它们之间的关系：</p>
+<p><img src="https://p.ipic.vip/zgq5oo.png" alt="image-20250227025320519" style="zoom:50%;"></p>
+<p>编写过程中用到了移动语义以及引用来保证 LRUKNode 的实例是 unique 的，防止内存泄露</p>
+<h3 id="task-2---disk-scheduler">Task #2 - Disk Scheduler</h3>
 
     </div>
 
@@ -347,21 +351,21 @@
 
     <div class="container post-prev-next">
         
-        <a href="/2024/12/09/CMU15445-learning-note/" class="next">
+        <a href="/2024/12/09/CMU15445-learning-note-hwk/" class="next">
             <div>
                 <div class="text">
                     <p class="label">下一篇</p>
-                    <h3 class="title">CMU15445听课笔记</h3>
+                    <h3 class="title">CMU15445作业</h3>
                 </div>
             </div>
         </a>
         
         
-        <a href="/2024/12/04/Mysql-learning-2/" class="prev">
+        <a href="/2024/12/09/CMU15445-learning-note/" class="prev">
             <div>
                 <div class="text">
                     <p class="label">上一篇</p>
-                    <h3 class="title">MySQL 学习笔记进阶篇</>
+                    <h3 class="title">CMU15445听课笔记</>
                 </div>
             </div>
         </a>
