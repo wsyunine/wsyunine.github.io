@@ -330,6 +330,21 @@
 <p><img src="https://p.ipic.vip/zgq5oo.png" alt="image-20250227025320519" style="zoom:50%;"></p>
 <p>编写过程中用到了移动语义以及引用来保证 LRUKNode 的实例是 unique 的，防止内存泄露</p>
 <h3 id="task-2---disk-scheduler">Task #2 - Disk Scheduler</h3>
+<p>阅读要求的时候发现有两个个不懂的标准类 <code>std::promise</code> 和 <code>std::future</code> 向 claude-3.5 提问后获得了简单易懂的答案：</p>
+<blockquote>
+<p>std::promise 是“我承诺之后会给你一个东西”</p>
+<p>std::future 是“我可以在未来获取这个东西”</p>
+<p>让我用一个现实生活的例子来解释：</p>
+<p>想象你去快餐店点餐：</p>
+<p>​ 你点餐时会得到一个取餐号（这就像 future）</p>
+<p>​ 厨师准备你的餐（这就像工作线程在计算）</p>
+<p>​ 厨师完成后把餐放到出餐口（这就像 promise.set_value()）</p>
+<p>​ 你拿着取餐号等待，直到叫到你的号（这就像 future.get()）</p>
+<p><code>std::promise</code> 和 <code>std::future</code> 的主要用途是在不同线程间安全地传递数据。一个线程通过 promise 设置值，另一个线程通过 future 获取值。这种机制确保了线程间数据传递的安全性和同步性。</p>
+</blockquote>
+<p>在这个 task 里功能是让 DiskScheduler 知道当前请求是否完成，如果完成了future 就能收到一个值</p>
+<p>这个 task 还是比较简单的，除了我不清楚 DiskScheduler 类还有两个函数 <code>IncreaseDiskSpace</code> 和 <code>DeallocatePage</code> 是干什么用的</p>
+<h3 id="task-3--">Task #3 -</h3>
 
     </div>
 
